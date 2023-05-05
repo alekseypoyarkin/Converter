@@ -19,3 +19,16 @@
   font-family: 'Font Awesome 5 Free', 'fa-regular-400';
   font-weight: 400;
 }
+
+.button-home {
+  width: auto;
+  height: 300px;
+  font-size: 16px;
+  color:const(black);
+  border-radius: 25px;
+  background-position: 50% 5%;
+  background-size: 200px 200px;
+  background-repeat: no-repeat;
+  padding-top: 150px;
+  //margin: 10% 10% 10% 10%;
+}

@@ -1,41 +1,100 @@
 <template>
     <Page>
         <ActionBar>
-            <Label text="Home"/>
+            <Label text="Converter" />
         </ActionBar>
-
-        <GridLayout>
-            <Label class="info">
-                <FormattedString>
-                    <Span class="fas" text.decode="&#xf135; "/>
-                    <Span :text="message"/>
-                </FormattedString>
-            </Label>
+        <GridLayout class="back_buttons"
+            columns="*, *"
+            rows="*, *, *">
+            <button class="button-home"
+                row="0"
+                col="0"
+                @tap="goToWeight"
+                text="Вес-масса" 
+                backgroundImage="~/assets/weight.png"/>
+            <button class="button-home"
+                row="0"
+                col="1"
+                @tap="goToTemperature"
+                text="Температура" 
+                backgroundImage="~/assets/temp.png"/>
+            <button class="button-home"
+                row="1"
+                col="0"
+                @tap="goToArea"
+                text="Площадь" 
+                backgroundImage="~/assets/area.png"/>
+            <button class="button-home"
+                row="1"
+                col="1"
+                @tap="goToTime"
+                text="Время" 
+                backgroundImage="~/assets/time.png"/>
+            <button class="button-home"
+                row="2"
+                col="0"
+                @tap="goToFinance"
+                text="Валюта" 
+                backgroundImage="~/assets/finance.png"/>
+            <button class="button-home"
+                row="2"
+                col="1"
+                @tap="goToLength"
+                text="Длина" 
+                backgroundImage="~/assets/length.png"/>
         </GridLayout>
     </Page>
-</template>
+</template> 
 
 <script>
-  export default {
-    computed: {
-      message() {
-        return "Blank {N}-Vue app";
-      }
-    }
-  };
+import Weight from './Weight.vue'
+import Temperature from './Temperature.vue'
+import Area from './Area.vue'
+import Time from './Time.vue'
+import Finance from './Finance.vue'
+import Length from './Length.vue'
+
+export default {
+    data() {
+        return {};
+    },
+    methods: {
+        goToWeight() {
+            this.$navigateTo(Weight);
+        },
+
+        goToTemperature() {
+            this.$navigateTo(Temperature);
+        },
+
+        goToArea() {
+            this.$navigateTo(Area);
+        },
+
+        goToTime() {
+            this.$navigateTo(Time);
+        },
+
+        goToFinance() {
+            this.$navigateTo(Finance);
+        },
+
+        goToLength() {
+            this.$navigateTo(Length);
+        },
+    },
+}
 </script>
 
-<style scoped lang="scss">
-    @import '@nativescript/theme/scss/variables/blue';
+<style scoped lang="scss">@import '@nativescript/theme/scss/variables/blue';
 
-    // Custom styles
-    .fas {
-        @include colorize($color: accent);
-    }
+// Custom styles
+.fas {
+    @include colorize($color: accent);
+}
 
-    .info {
-        font-size: 20;
-        horizontal-align: center;
-        vertical-align: center;
-    }
-</style>
+.info {
+    font-size: 20;
+    horizontal-align: center;
+    vertical-align: center;
+}</style>
